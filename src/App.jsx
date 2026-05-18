@@ -7,7 +7,30 @@ import Footer from './Footer'
 import './App.css'
 
 function App() {
- 
+   const expenses = [
+    {
+    id: '1',
+   date: new Date(2023, 7, 15),
+   title: 'Insurance', price: 100, location: 'Bangalore'
+},
+    {
+      id: '2',
+       date: new Date(2023, 8, 5),
+        title: 'Book', price: 500, location: 'Delhi'
+      },
+    {
+      id: '3',
+       date: new Date(2023, 9, 10),
+        title: 'Pen',
+         price: 50, location: 'Hyderabad'
+        },
+    {
+      id: '4',
+       date: new Date(2023, 10, 20),
+        title: 'Laptop',
+         price: 300, location: 'Mumbai'
+        },          
+   ];
 
   return (
     <>
@@ -21,35 +44,22 @@ function App() {
           <h1>Let's Get started</h1>
         </div>
        
-        <ExpenseItem 
-          date={new Date(2023, 7, 15)}
-          location="Bangalore"
-          title="Insurance"
-          price={50}
-        />
-        <ExpenseItem 
-          date={new Date(2026, 3, 25)}
-          location="Delhi"
-          title = "Book"
-          price="20"
-        />
-        <ExpenseItem
-         date={new Date(2026, 5, 10)}
-          location="Hyderabad"
-          title = "Food"
-          price="30"
-         />
-        <ExpenseItem 
-          date={new Date(2026, 8, 5)}
-          location = "Mumbai"
-          title = "Laptop"
-          price="500"
-        />
+      {expenses.map((expense, index) => {
+        return (
+          <ExpenseItem
+            key={expense.id}
+            date={expense.date}
+            location={expense.location}
+            title={expense.title}
+            price={expense.price}
+          />
+        );
+      })}
 
         <Footer />
       </section>
     </>
-  )
+  );
 }
 
 export default App
