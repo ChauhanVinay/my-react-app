@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 // import ExpenseItem from './components/ExpenseItem'
-import Expenses from './components/Expenses';
+import Expenses from './components/Expenses/Expenses';
 import Footer from './Footer'
 import './App.css'
 
@@ -19,7 +19,7 @@ function App() {
 <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
         <div>
-          <h1>Let's Get started</h1>
+        <h1>Let's Get started</h1>
         <Expenses></Expenses>
         </div>
 
